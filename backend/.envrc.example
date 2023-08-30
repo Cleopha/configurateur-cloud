@@ -1,0 +1,10 @@
+#.envrc
+
+# PostgreSQL Configuration
+export POSTGRES_USER=moi
+export POSTGRES_PASSWORD=ok
+export POSTGRES_DB=test
+export POSTGRES_PORT=5432
+export POSTGRES_HOST=localhost
+
+DB_URL="postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?schema=${DB_SCHEMA}"
