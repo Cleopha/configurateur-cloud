@@ -1,0 +1,77 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-unused-vars": ["warn"],
+    "import/extensions": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "path_to_your_webpack.config.js"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "extends": [
+        "airbnb-typescript",
+        "plugin:@next/next/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "plugins": [
+        "@typescript-eslint",
+        "prettier",
+        "simple-import-sort",
+        "react"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "prettier/prettier": "error",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "@typescript-eslint/no-unused-vars": ["warn"]
+      }
+    },
+    {
+      "files": [
+        "**/*.spec.ts",
+        "**/*.spec.tsx"
+      ],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:testing-library/react"
+      ],
+      "plugins": [
+        "jest",
+        "testing-library"
+      ]
+    },
+    {
+      "files": [
+        "**/*.e2e-spec.ts"
+      ],
+      "parserOptions": {
+        "project": "./test/tsconfig.json"
+      },
+      "extends": [
+        "plugin:cypress/recommended"
+      ],
+      "plugins": [
+        "cypress"
+      ]
+    }
+  ]
+}
